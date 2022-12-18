@@ -21,15 +21,16 @@ PROCESO: 40%
 """
 
 #* Interprete del sistema por defecto (ejecuta la aplicacion en la direccion de memoria (0x00000400 segun CPython)
+
 import sys
 import os
 import zipfile
 from  werkzeug.security import *
 
-from descinfo import *
+from dinfo import *
 
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QAction, QMessageBox, QTextEdit,
-QFileDialog, QInputDialog, QFontDialog, QColorDialog)
+                              QFileDialog, QInputDialog, QFontDialog, QColorDialog)
 
 from PyQt5.QtGui import QIcon,QTextCursor, QColor, QFont
 from PyQt5.QtCore import Qt

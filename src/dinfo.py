@@ -19,15 +19,7 @@ Si cree que puede ayudar, o quiere aportar al desarollo del proyecto, puede deja
 Desarollador: Baqueto
 """
 
-bmark = """
-
-
-
-
-
-
-
-
+bmark = """\n\n\n\n\n\n
 ========================================
 Archivo editado y escrito con BNotePad
 ========================================
