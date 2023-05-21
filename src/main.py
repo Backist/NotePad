@@ -44,7 +44,7 @@ class Compressor:
       try:
          self.path: os.path = path
       except os.error:
-         return f"El parametro 'path' no posee un formato valido. Proporciona una ruta de sistema"
+         return "El parametro 'path' no posee un formato valido. Proporciona una ruta de sistema"
       
    def Compress(self,compression_destination: os.path, compress_method = ["DEFLATED", "BZIP2", "LZMA"]):
       """Comprime un archivo en distintos metodos de compresion.\n
@@ -298,9 +298,9 @@ class Notepad(QMainWindow):
 
       file_name,_ =QFileDialog.getSaveFileName(self,'Guardar Archivo',
       "Untitled - BNotePad" if not self.FileOpened[0] else self.FileOpened[1], initialFilter= ffilter if ffilter else "Text Files(*.txt)" ,filter="HTML Files(*.html);;Text Files(*.txt);;MarkDown Files(*.md);;Python Files(*.py)")
-      
+
       if _ and file_name:
-   
+
          if file_name.endswith('.html'):
             notepad_richtext= self.text_field.toHtml()
             with open(file_name,'w') as f:
@@ -308,7 +308,6 @@ class Notepad(QMainWindow):
                with open(file_name, "a") as f:
                   f.write(f"\n\n\n{bmark}")
                   f.close()
-            QMessageBox.information(self, "Guardado de archivos", f"El archivo {file_name} se ha guardado correctamente", buttons= QMessageBox.Ok)
          elif file_name.endswith('.md'):
             notepad_richtext= self.text_field.toMarkdown()
             with open(file_name,'w') as f:
@@ -316,7 +315,6 @@ class Notepad(QMainWindow):
                with open(file_name, "a") as f:
                   f.write(f"\n\n\n{bmark}")
                   f.close()
-            QMessageBox.information(self, "Guardado de archivos", f"El archivo {file_name} se ha guardado correctamente", buttons= QMessageBox.Ok)
          else:
             notepad_text= self.text_field.toPlainText()
             with open(file_name,'w') as f:
@@ -324,7 +322,7 @@ class Notepad(QMainWindow):
                with open(file_name, "a") as f:
                   f.write(f"\n\n\n{bmark}")
                   f.close()
-            QMessageBox.information(self, "Guardado de archivos", f"El archivo {file_name} se ha guardado correctamente", buttons= QMessageBox.Ok)
+         QMessageBox.information(self, "Guardado de archivos", f"El archivo {file_name} se ha guardado correctamente", buttons= QMessageBox.Ok)
       else:
          QMessageBox.information(self,"Save Error",
             "No ha sido posible guardar el archivo o se ha rechazado la operacion", QMessageBox.Ok)
@@ -343,8 +341,6 @@ class Notepad(QMainWindow):
 
       if answer == QMessageBox.Yes:
          self.text_field.clear()
-      else:
-         pass
 
    def findTextDialog(self):
       """
@@ -353,13 +349,13 @@ class Notepad(QMainWindow):
 
       #* Mostramos un cuadro de dialogo de entrada para obtener la palabra con la que empezar a buscar
       find_text,ok= QInputDialog.getText(self,"Buscar Texto","Find:")
-      extra_selections=[]
-
       #*Aseguramos que el texto se pueda modificar
       if ok and not self.text_field.isReadOnly():
          #*Mueve el cursor al principio del texto
          self.text_field.moveCursor(QTextCursor.Start)
          color= QColor(Qt.yellow)
+         extra_selections=[]
+
          #* Buscamos mas ocurriencias en el texto
          while(self.text_field.find(find_text)):
             #* Usamos ExtraSelection para guardar de color amarillo 
