@@ -96,7 +96,7 @@ class Notepad(QMainWindow):
          )
 
          self.setWindowTitle('BNotePad')
-         self.setWindowIcon(QIcon(r'images\NotePadIcon.png'))
+         self.setWindowIcon(QIcon(r'static\\NotePadIcon.png'))
          #* Cargamos el widget al compilador de la libreria
          self.createNotepadWidget()
          #* Cargamos el menu al sys.argv()
@@ -122,65 +122,65 @@ class Notepad(QMainWindow):
       #TODO: Create menu for notepad GUI
       #*Creamos las acciones para el menu
 
-      new_act=QAction(QIcon(r'images\new_file.png'),'New',self)
+      new_act=QAction(QIcon(r'static\\new_file.png'),'New',self)
       new_act.setShortcut('Ctrl+N')
       new_act.triggered.connect(self.clearText)
 
-      open_act=QAction(QIcon(r'images\open_file.png'),'Open',self)
+      open_act=QAction(QIcon(r'static\\open_file.png'),'Open',self)
       open_act.setShortcut('Ctrl+O')
       open_act.triggered.connect(self.openFile)
 
-      fileinfo_act=QAction(QIcon(r'images\file_info.png'),'FileInfo',self)
+      fileinfo_act=QAction(QIcon(r'static\\file_info.png'),'FileInfo',self)
       fileinfo_act.setShortcut('Ctrl+Shift+F')
       fileinfo_act.triggered.connect(self.ShowFileInfo)
 
-      save_act=QAction(QIcon(r'images\save_file.png'),'Save',self)
+      save_act=QAction(QIcon(r'static\\save_file.png'),'Save',self)
       save_act.setShortcut('Ctrl+S')
       save_act.triggered.connect(self.saveToFile)
 
-      exit_act=QAction(QIcon(r'images\exit.png'),'Exit',self)
+      exit_act=QAction(QIcon(r'static\\exit.png'),'Exit',self)
       exit_act.setShortcut('Ctrl+Q')
       exit_act.triggered.connect(self.exitApp)
 
 
       #* Create actions for edit menu
 
-      undo_act=QAction(QIcon(r'images\undo.png'),"Undo",self)
+      undo_act=QAction(QIcon(r'static\\undo.png'),"Undo",self)
       undo_act.setShortcut('Ctrl+Z')
       undo_act.triggered.connect(self.text_field.undo)
 
-      redo_act=QAction(QIcon(r'images\redo.png'),'Redo',self)
+      redo_act=QAction(QIcon(r'static\\redo.png'),'Redo',self)
       redo_act.setShortcut('Ctrl+Shift+Z')
       redo_act.triggered.connect(self.text_field.redo)
 
-      cut_act=QAction(QIcon(r'images\cut.png'),'Cut',self)
+      cut_act=QAction(QIcon(r'static\\cut.png'),'Cut',self)
       cut_act.setShortcut('Ctrl+X')
       cut_act.triggered.connect(self.text_field.cut)
 
-      copy_act=QAction(QIcon(r'images\copy.png'),'Copy',self)
+      copy_act=QAction(QIcon(r'static\\copy.png'),'Copy',self)
       copy_act.setShortcut('Ctrl+C')
       copy_act.triggered.connect(self.text_field.copy)
 
-      paste_act=QAction(QIcon(r'images\paste.png'),'Paste',self)
+      paste_act=QAction(QIcon(r'static\\paste.png'),'Paste',self)
       paste_act.setShortcut('Ctrl+V')
       paste_act.triggered.connect(self.text_field.paste)
 
-      find_act=QAction(QIcon(r'images\find.png'),'Find',self)
+      find_act=QAction(QIcon(r'static\\find.png'),'Find',self)
       find_act.setShortcut('Ctrl+F')
       find_act.triggered.connect(self.findTextDialog)
 
 
       #* Tool bar actions menu
 
-      font_act=QAction(QIcon(r'images\font.png'),'Font',self)
+      font_act=QAction(QIcon(r'static\\font.png'),'Font',self)
       font_act.setShortcut('Ctrl+T')
       font_act.triggered.connect(self.chooseFont)
 
-      color_act=QAction(QIcon(r'images\font_color.png'),'Color',self)
+      color_act=QAction(QIcon(r'static\\font_color.png'),'Color',self)
       color_act.setShortcut('Ctrl+Shift+C')
       color_act.triggered.connect(self.chooseFontColor)
 
-      highlight_act=QAction(QIcon(r'images\highlight.png'),'Highlight',self)
+      highlight_act=QAction(QIcon(r'static\\highlight.png'),'Highlight',self)
       highlight_act.setShortcut('Ctrl+Shift+H')
       highlight_act.triggered.connect(self.chooseFontBackgroundColor)
 
@@ -218,11 +218,11 @@ class Notepad(QMainWindow):
 
       #* Create settings menu
 
-      BackgroundColor_act = QAction(QIcon(r'Images\BackgroundColor.png'), "IDE Color" ,self)
+      BackgroundColor_act = QAction(QIcon(r'static\\BackgroundColor.png'), "IDE Color" ,self)
       BackgroundColor_act.setShortcut('Ctrl+Shift+I')
       BackgroundColor_act.triggered.connect(self.setBackgroundColor)
 
-      settings_act = QAction(QIcon(r'Images\settings.png'), "Preferences" ,self)
+      settings_act = QAction(QIcon(r'static\\settings.png'), "Preferences" ,self)
       settings_act.setShortcut('Ctrl+Shift+P')
       settings_act.triggered.connect(self.settings)
 
@@ -231,7 +231,7 @@ class Notepad(QMainWindow):
       settings_menu.addAction(settings_act)
 
       #* Create help menu
-      about_act=QAction(QIcon(r'Images\about.png'), 'About',self)
+      about_act=QAction(QIcon(r'static\\about.png'), 'About',self)
       about_act.setShortcut('Ctrl+Shift+A')
       about_act.triggered.connect(self.aboutDialog)
 
