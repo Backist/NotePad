@@ -45,6 +45,6 @@ class DataVault():
     def getitem(self, key):
         return self.MetaVault[key]
 
-    def toFormat(format = ["Json", "Raw String"]):
+    def toFormat(self):
         ...
 
